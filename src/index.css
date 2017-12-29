@@ -1,0 +1,142 @@
+/* Variables (Not supported by some browsers natively, so it would need some pre or post-processing in real world app) */
+:root {
+  --total-width: 555px;
+  --first-column-width: 425px;
+
+  --white-color: #fff;
+  --head-cell-bg-color: #6f7084;
+  --body-cell-bg-color: #f0f0f0;
+  --body-cell-liked-bg-color: #e7e7e7;
+  --body-cell-like-hover-bg-color: #cbd9f3;
+  --body-cell-like-active-bg-color: #a8b7d6;
+  --button-bg-color: #5c7ebd;
+  --button-hover-bg-color: #7796ce;
+  --button-active-bg-color: #5974a9;
+}
+
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.2;
+}
+
+#root {
+  max-width: var(--total-width);
+  margin: 0 auto;
+}
+
+
+/* Table */
+.table {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border: 0;
+  border-collapse: collapse;
+}
+
+.table-row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.table-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  word-break: break-all;
+  min-height: 60px;
+  border-bottom: 5px solid var(--white-color);
+  transition: background-color 200ms ease-in;
+}
+
+.table-cell:first-of-type {
+  width: var(--first-column-width);
+  min-width: 160px;
+  padding: 15px;
+}
+
+.table-cell:last-of-type {
+  flex-shrink: 0;
+  width: 130px;
+  padding: 15px 20px;
+  border-left: 5px solid var(--white-color);
+}
+
+.table-row.liked .table-cell {
+  background-color: var(--body-cell-liked-bg-color);
+}
+
+.icon-like {
+  opacity: 0.35;
+}
+
+.table-head .table-cell {
+  color: var(--white-color);
+  background-color: var(--head-cell-bg-color);
+}
+
+.table-body .table-cell {
+  background-color: var(--body-cell-bg-color);
+}
+
+.table-body .table-cell:last-of-type {
+  padding-right: 30px;
+}
+
+.table-body .table-cell:last-of-type:hover {
+  cursor: pointer;
+  background-color: var(--body-cell-like-hover-bg-color);
+}
+
+.table-body .table-cell:last-of-type:active {
+  background-color: var(--body-cell-like-active-bg-color);
+}
+
+
+/* Form */
+.form {
+  display: flex;
+}
+
+.input {
+  font-size: 24px;
+  width: var(--first-column-width);
+  min-width: 160px;
+  height: 60px;
+  padding: 15px;
+  margin-right: 5px;
+  border: 1px solid var(--head-cell-bg-color);
+}
+
+.button {
+  flex-shrink: 0;
+  font-size: 24px;
+  width: 125px;
+  height: 60px;
+  border: 0;
+  color: #ffffff;
+  background-color: var(--button-bg-color);
+  transition: background-color 200ms ease-in;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover-bg-color);
+}
+
+.button:active {
+  background-color: var(--button-active-bg-color);
+}
